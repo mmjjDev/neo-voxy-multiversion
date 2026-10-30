@@ -75,7 +75,7 @@ def build_classpath():
         if candidates:
             jars.append(candidates[-1])
     jars.extend(sorted((ROOT / "libs" / "aero-spike").glob("*.jar")))
-    sodium = ROOT / "build" / "generated" / "compile-deps" / "sodium-neoforge-0.8.12-mod.jar"
+    sodium = ROOT / "build" / "generated" / "compile-deps" / "sodium-neoforge-0.8.13-mod.jar"
     if sodium.exists():
         jars.append(sodium)
     return jars
