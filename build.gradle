@@ -204,9 +204,9 @@ configurations.sodiumDistribution.transitive = false
 configurations.createDistribution.transitive = false
 configurations.sableDistribution.transitive = false
 
-def sodiumVersion = "mc1.21.1-0.8.12-neoforge"
-def sodiumNestedJar = "META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.12+mc1.21.1-mod.jar"
-def sodiumCompileJar = layout.buildDirectory.file("generated/compile-deps/sodium-neoforge-0.8.12-mod.jar")
+def sodiumVersion = "mc1.21.1-0.8.13-neoforge"
+def sodiumNestedJar = "META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar"
+def sodiumCompileJar = layout.buildDirectory.file("generated/compile-deps/sodium-neoforge-0.8.13-mod.jar")
 
 tasks.register("extractSodiumCompileJar", Copy) {
     from({
@@ -219,7 +219,7 @@ tasks.register("extractSodiumCompileJar", Copy) {
         path = name
     }
     includeEmptyDirs = false
-    rename { "sodium-neoforge-0.8.12-mod.jar" }
+    rename { "sodium-neoforge-0.8.13-mod.jar" }
 }
 
 // Create publishes Ponder and the matching combined Flywheel API/implementation inside its
