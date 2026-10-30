@@ -1,0 +1,28 @@
+name: Neo Voxy 1.21.1 + Sodium 0.8.13
+on:
+  push:
+    branches:
+      - chatgpt-voxy-1.21.1-compat
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build Neo Voxy for NeoForge 1.21.1
+        run: bash scripts/build.sh neoforge-1.21.1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: neo-voxy-neoforge-1.21.1-sodium-0.8.13
+          path: dist/*mc1.21.1*neoforge.jar
+          if-no-files-found: error
